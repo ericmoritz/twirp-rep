@@ -18,7 +18,7 @@ service Rep {
 // Vote() rpc
 ///////////////////////////////////////////////////////////////////////////////
 message VoteReq {
-    // This request requries a valid users.Session, this is acquired by calling the Users.Login() rpc
+    // This request requires a valid users.Session, this is acquired by calling the Users.Login() rpc
     ericmoritz.users.users.Session session = 1;
     string target = 3;
 }
