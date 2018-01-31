@@ -1,3 +1,3 @@
-# twirp-users
+# twirp-rep
 
-A really simple and really insecure users microservice for demoing [Twirp](https://github.com/twitchtv/twirp)
+A really simple rep system that uses [twirp-users](https://github.com/ericmoritz/twirp-users) to twirp service composting
