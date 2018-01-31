@@ -19,6 +19,7 @@ service Rep {
 ///////////////////////////////////////////////////////////////////////////////
 message VoteReq {
     // This request requires a valid users.Session, this is acquired by calling the Users.Login() rpc
+    // See: https://github.com/ericmoritz/twirp-users/blob/master/rpc/users/service.proto
     ericmoritz.users.Session session = 1;
     string target = 3;
 }
