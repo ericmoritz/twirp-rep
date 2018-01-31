@@ -4,14 +4,19 @@ import "github.com/ericmoritz/twirp-users/rpc/users/service.proto";
 package ericmoritz.rep.rep;
 option go_package = "rep";
 
+// The Rep enables you to vote on a person
 service Rep {
     // Vote for a user
     rpc Vote(VoteReq) returns (VoteResp);
 
-    // Remove your votes
+    // Get the total votes for a user
     rpc Votes(VotesReq) returns (VotesResp);
 }
 
+
+///////////////////////////////////////////////////////////////////////////////
+// Vote() rpc
+///////////////////////////////////////////////////////////////////////////////
 message VoteReq {
     // This request requries a valid users.Session, this is acquired by calling the Users.Login() rpc
     ericmoritz.users.users.Session session = 1;
@@ -21,6 +26,9 @@ message VoteReq {
 message VoteResp { }
 
 
+///////////////////////////////////////////////////////////////////////////////
+// Votes() rpc
+///////////////////////////////////////////////////////////////////////////////
 message VotesReq {
     string username = 1;
 }
@@ -29,7 +37,10 @@ message VotesResp {
     uint64 count = 1;
 }
 
+
+///////////////////////////////////////////////////////////////////////////////
 // Internal
+///////////////////////////////////////////////////////////////////////////////
 message VoteRecord {
     string UUID = 1;
     string source = 2;

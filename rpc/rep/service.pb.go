@@ -33,7 +33,7 @@ var _ = math.Inf
 const _ = proto.ProtoPackageIsVersion2 // please upgrade the proto package
 
 type VoteReq struct {
-	// This request requries a valid users.Session
+	// This request requries a valid users.Session, this is acquired by calling the Users.Login() rpc
 	Session *ericmoritz_users_users.Session `protobuf:"bytes,1,opt,name=session" json:"session,omitempty"`
 	Target  string                          `protobuf:"bytes,3,opt,name=target" json:"target,omitempty"`
 }
