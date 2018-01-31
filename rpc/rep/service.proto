@@ -1,0 +1,37 @@
+syntax = "proto3";
+import "github.com/ericmoritz/twirp-users/rpc/users/service.proto";
+
+package ericmoritz.rep.rep;
+option go_package = "rep";
+
+service Rep {
+    // Vote for a user
+    rpc Vote(VoteReq) returns (VoteResp);
+
+    // Remove your votes
+    rpc Votes(VotesReq) returns (VotesResp);
+}
+
+message VoteReq {
+    // This request requries a valid users.Session
+    ericmoritz.users.users.Session session = 1;
+    string target = 3;
+}
+
+message VoteResp { }
+
+
+message VotesReq {
+    string username = 1;
+}
+
+message VotesResp {
+    uint64 count = 1;
+}
+
+// Internal
+message VoteRecord {
+    string UUID = 1;
+    string source = 2;
+    string target = 3;
+}
