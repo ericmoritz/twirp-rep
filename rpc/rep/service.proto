@@ -1,7 +1,7 @@
 syntax = "proto3";
 import "github.com/ericmoritz/twirp-users/rpc/users/service.proto";
 
-package ericmoritz.rep.rep;
+package ericmoritz.rep;
 option go_package = "rep";
 
 // The Rep enables you to vote on a person
@@ -19,7 +19,7 @@ service Rep {
 ///////////////////////////////////////////////////////////////////////////////
 message VoteReq {
     // This request requires a valid users.Session, this is acquired by calling the Users.Login() rpc
-    ericmoritz.users.users.Session session = 1;
+    ericmoritz.users.Session session = 1;
     string target = 3;
 }
 
