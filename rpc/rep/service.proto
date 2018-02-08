@@ -7,6 +7,7 @@ option go_package = "rep";
 // The Rep enables you to vote on a person
 service Rep {
     // Vote for a user
+    // Errors: PermissionDenied
     rpc Vote(VoteReq) returns (VoteResp);
 
     // Get the total votes for a user
